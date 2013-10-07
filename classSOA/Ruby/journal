@@ -1,0 +1,34 @@
+irb                     #go to ruby interaction
+1                       #Numbers
++ - * /                 #do the operation + - * /
+"Elaine"                #Elaine(strings)
+.reverse                #reverse
+.length                 #the length of the word in "  "
+*5
+                     
+40.reverse              #Error
+"40".reverse            #04
+40.to_s.reverse         #04
+.to_s                   #converts things to strings. the same as " "
+ 
+.to_i                   #converts things to integers (numbers.)
+"10".to_i    => 10      #(Decimal)
+"3.14".to_i  => 3
+"10".to_i(2) => 2       #(Binary)
+"10".to_i(8) => 8       #(Octal)
+"10".to_i(16)=> 16      #(Hexadecimal)
+"10".to_i(17)=> 17      #(available from 2 to 36)
+ 
+[ ]                     #arrays
+to_a                    #converts things to arrays.the same as[ ]
+ 
+"12,47,35".max          #Error(strings)
+[12,47,35].max          #47
+[12,47,35].sort         #[12,35,47] sort an array
+ 
+#{ }                    #annotations
+>> name = "Elaine"=> "Elaine"
+>>"My name is #{name}"=> "My name is Elaine"
+>>"My name is #{1 + 1}"=> "My name is 2"   
+
+do...end                #build a programming block
