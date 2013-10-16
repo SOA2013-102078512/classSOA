@@ -1,0 +1,11 @@
+bundle install                 #bundle the gem write in the gemfile
+rails server                   # to start the server
+rails console                  # like irb, for sqlite command
+ 
+rake routes                    # list all url
+rake db:migrate                # create table
+ 
+ 
+rake db:rollback               # undo  migration
+ 
+rake db:seed                   # create all records which written in seed.rb
