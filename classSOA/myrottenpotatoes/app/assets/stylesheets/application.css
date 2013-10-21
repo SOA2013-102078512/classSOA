@@ -7,10 +7,12 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+/*
  *= require_self
  *= require_tree .
+ *= require jquery.ui.all
  */
+ 
 html, body {
   margin: 0;
   padding: 0;
@@ -72,3 +74,4 @@ form label {
   font-weight: bold;
   color: maroon;
 }
+
