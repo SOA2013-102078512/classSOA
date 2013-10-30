@@ -40,4 +40,6 @@ def destroy
   flash[:notice] = "Movie '#{@movie.title}' deleted."
   redirect_to movies_path
 end
+  before_filter :authenticate_moviegoer!
 end
+ 

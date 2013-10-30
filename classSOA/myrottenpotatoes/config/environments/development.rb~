@@ -34,7 +34,5 @@ Myrottenpotatoes::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  #Set up default url options for the mailer in each environment. Here is the configuration for "config/environments/development.rb".
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
-
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }

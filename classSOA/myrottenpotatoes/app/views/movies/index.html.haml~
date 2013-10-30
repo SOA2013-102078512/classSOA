@@ -1,5 +1,9 @@
 %h1 All Movies
- 
+- if moviegoer_signed_in?
+  = link_to 'log_out', destroy_moviegoer_session_path, :method => 'delete'
+- else
+  = link_to 'login', new_moviegoer_session_path
+
 %table#movies
   %thead
     %tr
@@ -14,4 +18,4 @@
         %td= movie.rating
         %td= movie.release_date
         %td= link_to "More about #{movie.title}", movie_path(movie)
-            = link_to 'Add new movie', new_movie_path
+= link_to 'Add new movie', new_movie_path
