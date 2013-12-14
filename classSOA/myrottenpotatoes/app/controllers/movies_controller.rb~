@@ -40,5 +40,14 @@ def destroy
   flash[:notice] = "Movie '#{@movie.title}' deleted."
   redirect_to movies_path
 end
+  before_filter :authenticate_moviegoer!
 end
- before_filter :authenticate_moviegoer!
+class MoviesController < ApplicationController
+  def movies_with_good_reviews
+    @movies = Movie.joins(:reviews).group(:movie_id).
+      having('AVG(reviews.potatoes) > 3')
+  end
+  def movies_for_kids
+    @movies = Movie.where('rating in ?', %w(G PG))
+  end
+end

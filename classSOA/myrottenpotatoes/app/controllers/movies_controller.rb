@@ -42,4 +42,12 @@ def destroy
 end
   before_filter :authenticate_moviegoer!
 end
- 
+class MoviesController < ApplicationController
+  def movies_with_good_reviews
+    @movies = Movie.joins(:reviews).group(:movie_id).
+      having('AVG(reviews.potatoes) > 3')
+  end
+  def movies_for_kids
+    @movies = Movie.where('rating in ?', %w(G PG))
+  end
+end

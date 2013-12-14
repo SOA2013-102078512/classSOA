@@ -1,4 +1,6 @@
 class Moviegoer < ActiveRecord::Base
+has_many :reviews
+has_many :movies, :through => :reviews
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 devise :database_authenticatable, :registerable,:recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
@@ -7,7 +9,6 @@ devise :database_authenticatable, :registerable,:recoverable, :rememberable, :tr
   attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :name
   # attr_accessible :title, :body
 
-end
 #This method simply tries to find an existing moviegoer by uid or create one with a random password otherwise.
  
 def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
@@ -29,3 +30,4 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
       end
     end
   end
+end
